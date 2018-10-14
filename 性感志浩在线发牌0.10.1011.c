@@ -17,23 +17,23 @@ void js(int p)        //结算阶段，计算点数
 		k=0;
 		for(i=0;i<s1;i++)
 	    {
-		    if(player[i][1]>0&&player[i][1]<10) sum1=sum1+player[i][1]+1;
-		    else if(player[i][1]!=0&&player[i][1]<13) sum1=sum1+10;
-		    else k++;
+		    if(player[i][1]>0&&player[i][1]<10) sum1=sum1+player[i][1]+1;       //2~10按点数加 
+		    else if(player[i][1]!=0&&player[i][1]<13) sum1=sum1+10;        //J,Q,K点数记为10 
+		    else k++;        //记录A张数，最后结算点数
 	    }
 	    if(k==1)
 	    {
-	    	if(sum1+11<22) sum1=sum1+11;
-		    else sum1=sum1+1;
+	    	if(sum1+11<22) sum1=sum1+11;        //一张A最大点数11
+		    else sum1=sum1+1;        //最小1 
 	    }
 	    else if(k==2)
     	{
-		    if(sum1+12<22) sum1=sum1+12;
-		    else sum1=sum1+2;
+		    if(sum1+12<22) sum1=sum1+12;        //最大可能点数12 
+		    else sum1=sum1+2;        //最小2 
         }
-    	else sum1=sum1+k;
+    	else sum1=sum1+k;        //大于两张则全按1结算 
     }
-	else if(p==2)
+	else if(p==2)        //结算player-2 
 	{
 		k=0;
 		for(i=0;i<s2;i++)
@@ -54,7 +54,7 @@ void js(int p)        //结算阶段，计算点数
         }
     	else sum2=sum2+k;
 	}
-	else
+	else        //结算庄家 
 	{
 		k=0;
 		sum3=0;
